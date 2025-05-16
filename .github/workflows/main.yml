@@ -2,5 +2,17 @@ name: ✅ test
 on: [push, pull_request]
 jobs:
   test:
-    uses: react-component/rc-test/.github/workflows/test.yml@main
-    secrets: inherit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: du -sh ~/.bun
+      - run: bun install --registry=https://registry.npmmirror.com
+      - run: bun run lint
+      - run: bun run tsc --noEmit --workspace packages/x
+      - run: bun run compile --workspace packages/x
+      - run: bun run coverage --workspace packages/x
+      - uses: codecov/codecov-action@v5
+        with:
+          directory: packages/x
+          token: ${{ secrets.CODECOV_TOKEN }}
