@@ -48,13 +48,14 @@ demo:
 ### Conversation
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | key | 唯一标识 | string | - | - |
 | label | 会话名称 | React.ReactNode | - | - |
 | timestamp | 会话时间戳 | number | - | - |
 | group | 会话分组类型，与 `ConversationsProps.groupable` 联动 | string | - | - |
 | icon | 会话图标 | React.ReactNode | - | - |
 | disabled | 是否禁用 | boolean | - | - |
+| htmlAttrs | html 原生属性（除 onClick, direction 以外） | Omit<React.HTMLAttributes<HTMLLIElement>, 'onClick' | 'direction'> | - | - |
 
 ### GroupableProps
 

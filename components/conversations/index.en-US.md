@@ -47,13 +47,14 @@ Common props ref：[Common props](/docs/react/common-props)
 ### Conversation
 
 | Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | key | Unique identifier | string | - | - |
 | label | Conversation name | React.ReactNode | - | - |
 | timestamp | Conversation timestamp | number | - | - |
 | group | Conversation type, linked to `ConversationsProps.groupable` | string | - | - |
 | icon | Conversation icon | React.ReactNode | - | - |
 | disabled | Whether to disable | boolean | - | - |
+| htmlAttrs | html native attributes(except onClick, direction) | Omit<React.HTMLAttributes<HTMLLIElement>, 'onClick' | 'direction'> | - | - |
 
 ### GroupableProps
 
